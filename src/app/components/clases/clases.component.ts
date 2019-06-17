@@ -9,7 +9,7 @@ export class ClasesComponent implements OnInit {
 
 
   alerta: string = 'alert-danger';
-
+  loading: boolean = false;
   propiedades: Propiedades = {
     danger: false
   };
@@ -20,9 +20,15 @@ export class ClasesComponent implements OnInit {
   ngOnInit() {
   }
 
+  ejecutar(){
+    this.loading=true;
+    setTimeout(()=>this.loading=false,3000)
+  }
+
 }
 
 
 interface Propiedades {
   danger: boolean
 };
+
